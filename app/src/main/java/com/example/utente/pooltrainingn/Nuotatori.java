@@ -13,17 +13,17 @@ public class Nuotatori implements Serializable {
 
     public Nuotatori(){}
 
-    public Nuotatori(String nomeNuotatore,String cognomeNuotatore, String idAllenatore){
-        this.nome=nomeNuotatore;
-        this.cognome=cognomeNuotatore;
+    public Nuotatori(String nome,String cognome, String idAllenatore){
+        this.nome=nome;
+        this.cognome=cognome;
         this.idAllenatore=idAllenatore;
     }
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nomeNuotatore) {
-        this.nome= nomeNuotatore;
+    public void setNome(String nome) {
+        this.nome= nome;
     }
 
     public String getCognome() {

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                         uid=user.getUid();
 
                         Intent settimana=new Intent(getApplicationContext(), ListaSettimanaActivity.class);
+                        //settimana.putExtra("idNuotatore", uid);
                         startActivity(settimana);
                         // User is signed in
 
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             email = (EditText) findViewById(R.id.editTextMail);
             registrati = (Button) findViewById(R.id.buttonRegistrati);
             accedi = (Button) findViewById(R.id.buttonAccedi);
-            textregistrazione = (TextView) findViewById(R.id.textViewRegistrazione);
+            textregistrazione = (TextView) findViewById(R.id.textView);
 
 
             registrati.setOnClickListener(new View.OnClickListener() {
@@ -95,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
 
                     //finish();
                     //se sono un allenatore e faccio il login, vado alla lista nuotatori
-                    Intent listaNuotatori=new Intent(getApplicationContext(),ListaSettimanaActivity.class);
-                    //listaNuotatori.putExtra("chiave",uid);
-                    startActivity(listaNuotatori);
+                    Intent listaSettimana=new Intent(getApplicationContext(),ListaSettimanaActivity.class);
+                    //listaSettimana.putExtra("idNuotatore",uid);
+                    startActivity(listaSettimana);
 
                 }
                 else{

@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sfondo3"
     tools:context="com.example.utente.pooltrainingn.MainActivity">
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textPassword"
+        android:textColorHint="@android:color/black"
+        android:textColorLink="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_action_mail"
         android:layout_below="@+id/editTextMail"
         android:layout_alignLeft="@+id/editTextMail"
         android:layout_alignStart="@+id/editTextMail" />
@@ -22,15 +26,18 @@
         android:id="@+id/editTextMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="73dp"
-        android:layout_marginRight="73dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginTop="112dp"
         android:ems="10"
         android:hint="E-Mail"
-        android:inputType="textPersonName" />
+        android:inputType="textEmailAddress"
+        android:textColorHint="@android:color/black"
+        android:textColorLink="@color/colorPrimary"
+        android:drawableLeft="@drawable/ic_action_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/buttonAccedi"
@@ -38,19 +45,32 @@
         android:layout_height="wrap_content"
         android:text="Accedi"
         android:layout_below="@+id/editTextPassword"
+        android:layout_alignLeft="@+id/editTextPassword"
+        android:layout_alignStart="@+id/editTextPassword"
+        android:layout_marginTop="52dp"
         android:layout_alignRight="@+id/editTextPassword"
-        android:layout_alignEnd="@+id/editTextPassword"
-        android:layout_marginRight="63dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginTop="65dp" />
+        android:layout_alignEnd="@+id/editTextPassword" />
 
     <Button
         android:id="@+id/buttonRegistrati"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrati"
-        android:layout_marginBottom="52dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/buttonAccedi"
-        android:layout_alignStart="@+id/buttonAccedi" />
+        android:layout_alignStart="@+id/buttonAccedi"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Non sei ancora registrato? Registrati!"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/buttonAccedi"
+        android:layout_alignRight="@+id/buttonAccedi"
+        android:layout_alignEnd="@+id/buttonAccedi"
+        android:textColor="@android:color/black" />
 </RelativeLayout>

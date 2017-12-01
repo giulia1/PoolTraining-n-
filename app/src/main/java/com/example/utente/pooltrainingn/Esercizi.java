@@ -1,45 +1,64 @@
 package com.example.utente.pooltrainingn;
 
+import java.io.Serializable;
+
 /**
  * Created by Utente on 25/10/2017.
  */
 
-public class Esercizi {
+
+public class Esercizi implements Serializable {
 
     private String nomeEsercizio;
-    private String giornoSettimana;
     private int numeroVasche;
+    private String idNuotatore;
 
-    public Esercizi(){}
 
-    public Esercizi(String nomeEsercizio, String giornoSettimanaEsercizio,int numeroVascheEsercizio){
+    public Esercizi()
+    {
+
+    }
+    public Esercizi(String nomeEsercizio, int numeroVascheEsercizio)
+    {
         this.nomeEsercizio=nomeEsercizio;
-        this.giornoSettimana=giornoSettimanaEsercizio;
         this.numeroVasche=numeroVascheEsercizio;
+
+    }
+
+    public Esercizi (String nomeEsercizio, int numeroVascheEsercizio, String idNuotatore){
+
+        this.nomeEsercizio=nomeEsercizio;
+        this.numeroVasche=numeroVascheEsercizio;
+        this.idNuotatore=idNuotatore;
+
     }
 
     public String getNomeEsercizio() {
+
         return nomeEsercizio;
     }
 
     public void setNomeEsercizio(String nomeEsercizio) {
+
         this.nomeEsercizio = nomeEsercizio;
     }
 
-    public String getGiornoSettimana() {
-        return giornoSettimana;
-    }
 
-    public void setGiornoSettimana(String giornoSettimanaEsercizio) {
-        this.giornoSettimana = giornoSettimanaEsercizio;
-    }
 
     public int getNumeroVasche() {
         return numeroVasche;
     }
 
-    public void setNumeroVascheEsercizio(int numeroVascheEsercizio) {
+    public void setNumeroVasche(int numeroVascheEsercizio) {
+
         this.numeroVasche = numeroVascheEsercizio;
+    }
+
+    public String getIdNuotatore(){
+        return idNuotatore;
+    }
+    public void setIdNuotatore(String idNuotatore){
+        this.idNuotatore=idNuotatore;
     }
 
 
