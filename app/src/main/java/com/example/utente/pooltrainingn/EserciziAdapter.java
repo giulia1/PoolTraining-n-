@@ -11,10 +11,13 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Utente on 25/10/2017.
+ * Created by Utente on 27/11/2017.
  */
 
+
+
 public class EserciziAdapter extends BaseAdapter {
+
     private List<Esercizi> esercizi= Collections.emptyList();
     private Context context;
 
@@ -31,30 +34,31 @@ public class EserciziAdapter extends BaseAdapter {
         return esercizi.get(position);
     }
 
+
     @Override
     public long getItemId(int position) {
         return 0;
     }
+
     public void update(List<Esercizi> newList) {
+
         esercizi = newList;
         notifyDataSetChanged();
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup parent) {
-        if (view == null)
-            view = LayoutInflater.from(context).inflate(R.layout.riga_esercizio, parent, false);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null)
+            convertView = LayoutInflater.from(context).inflate(R.layout.riga_esercizio, parent, false);
 
-        TextView nomeEsercizio = (TextView)view.findViewById(R.id.textViewNomeEsercizio);
-        TextView numeroVasche  = (TextView)view.findViewById(R.id.textViewNVasche);
+        TextView nomeEsercizio= (TextView)convertView.findViewById(R.id.textViewNomeEsercizio);
+        TextView  numeroVasche= (TextView)convertView.findViewById(R.id.textViewNVascheAggiunte);
 
-
-        // Imposto i valori da visualizzare
         Esercizi e = esercizi.get(position);
-        numeroVasche.setText(String.valueOf(e.getNumeroVasche()));
         nomeEsercizio.setText(e.getNomeEsercizio());
+        numeroVasche.setText(String.valueOf(e.getNumeroVasche()));
 
 
-        return view;
+        return convertView;
     }
 }
