@@ -2,6 +2,7 @@ package com.example.utente.pooltrainingn;
 
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 
+import android.view.MenuItem;
 import android.widget.ListView;
 
 
@@ -19,8 +21,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ListaEserciziActivity extends AppCompatActivity {
 
     private nuotoDatabase archivio = new nuotoDatabase();
-    private String idNuotatore="9nvoBqyYLbOEOQXdf6sl3QeJfpG3";
-    private String weekday="Lunedì";
+    private String idNuotatore;
+    private String weekday;
     private ListView listaEsercizi;
     private EserciziAdapter adapter;
     private Toolbar logout;
@@ -32,8 +34,9 @@ public class ListaEserciziActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_esercizi);
-
-        //logout = (Toolbar) findViewById(R.id.toolbarLogout);
+        weekday=getIntent().getStringExtra("giorno");
+        idNuotatore=getIntent().getStringExtra("idNuotatore");
+        logout = (Toolbar) findViewById(R.id.toolbarLogout);
 
         listaEsercizi = (ListView) findViewById(R.id.listaEsercizi);
 
@@ -48,7 +51,7 @@ public class ListaEserciziActivity extends AppCompatActivity {
 
 
         listaEsercizi.setAdapter(adapter);
-        /*logout.setTitle("I miei esercizi");
+        logout.setTitle("I miei esercizi");
         logout.inflateMenu(R.menu.menu_logout);
         menu = logout.getMenu();
 
@@ -73,16 +76,61 @@ public class ListaEserciziActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }*/
+    }
+    public void onStart()
+    {
+        super.onStart();
 
     }
 
+    public void onRestart()
+    {
+        super.onRestart();
+
+    }
+
+    public void onResume()
+
+    {
+        super.onResume();
+        archivio.leggiEsercizi(weekday, idNuotatore ,new nuotoDatabase.UpdateListenerE() {
+            @Override
+            public void eserciziAggiornati() {
+                adapter.update(archivio.elencoEsercizi());
+            }
+        });
+
+
+    }
+
+    public void onPause()
+    {
+        super.onPause();
+
+    }
+
+    public void onStop()
+    {
+        super.onStop();
+
+    }
+
+    public void onDestroy()
+    {
+        super.onDestroy();
+
+    }
+}
+
+
+
+/*
     @Override
     protected void onDestroy() {
         super.onDestroy();
         archivio.terminaOsservazioneEsercizi();
-    }
-}
+    }*/
+
 
 
 

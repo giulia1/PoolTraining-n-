@@ -69,8 +69,7 @@ public class nuotoDatabase {
         }
     };
         ref.addValueEventListener(listenerEsercizi);
-
-}
+    }
 
     public void terminaOsservazioneEsercizi  () {
         if (listenerEsercizi != null)

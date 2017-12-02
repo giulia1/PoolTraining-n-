@@ -29,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText passwordField;
     private EditText ripetiPassword;
     private FirebaseAuth firebaseAuth;
+
     private FirebaseAuth.AuthStateListener mAuthListener;
 
 
@@ -109,14 +110,14 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void CreateAccount(String mail,String password)
+    private void CreateAccount(final String mail,String password)
     {
         firebaseAuth.createUserWithEmailAndPassword(mail,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task)
             {
                 if(task.isSuccessful()) {
-                    Nuotatori n = new Nuotatori(nomeField.getText().toString(), cognomeField.getText().toString(), "null");
+                    Nuotatori n = new Nuotatori(nomeField.getText().toString(), cognomeField.getText().toString(), "null", mail);
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("Nuotatori");
                     myRef.child(task.getResult().getUser().getUid()).setValue(n);

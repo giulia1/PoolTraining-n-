@@ -10,13 +10,15 @@ public class Nuotatori implements Serializable {
     private String nome;
     private String cognome;
     private String idAllenatore;
+    private String email;
 
     public Nuotatori(){}
 
-    public Nuotatori(String nome,String cognome, String idAllenatore){
+    public Nuotatori(String nome,String cognome, String idAllenatore, String email){
         this.nome=nome;
         this.cognome=cognome;
         this.idAllenatore=idAllenatore;
+        this.email=email;
     }
     public String getNome() {
         return nome;
@@ -38,6 +40,12 @@ public class Nuotatori implements Serializable {
     }
     public void setIdAllenatore(String idAllenatore) {
         this.idAllenatore = idAllenatore;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {this.email= email;
     }
 
 

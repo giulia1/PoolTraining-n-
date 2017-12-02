@@ -27,12 +27,9 @@ public class ListaSettimanaActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_settimana);
-       // mAuth = FirebaseAuth.getInstance();
-
-
-
+        mAuth = FirebaseAuth.getInstance();
         list = (ListView) findViewById(R.id.listaSettimana);
-        //idNuotatore = mAuth.getCurrentUser().getUid();
+        idNuotatore = mAuth.getCurrentUser().getUid();
         logout = (Toolbar) findViewById(R.id.toolbarLogout);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nome);
         list.setAdapter(adapter);
@@ -46,9 +43,9 @@ public class ListaSettimanaActivity extends AppCompatActivity  {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent esercizi = new Intent(getApplicationContext(), ListaEserciziActivity.class);
-                //giorno = list.getItemAtPosition(position).toString();
+                giorno = list.getItemAtPosition(position).toString();
                 esercizi.putExtra("giorno", giorno);
-                //esercizi.putExtra("idNuotatore", idNuotatore);
+                esercizi.putExtra("idNuotatore", idNuotatore);
                 startActivity(esercizi);
 
             }
@@ -61,9 +58,9 @@ public class ListaSettimanaActivity extends AppCompatActivity  {
                 switch (item.getItemId()) {
                     case R.id.Logout:
                         mAuth.signOut();
-                        finish();
                         Intent loginActivity = new Intent(ListaSettimanaActivity.this, MainActivity.class);
                         startActivity(loginActivity);
+                        finish();
 
                         return true;
                 }
