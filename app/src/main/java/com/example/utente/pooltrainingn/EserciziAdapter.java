@@ -57,8 +57,6 @@ public class EserciziAdapter extends BaseAdapter {
         Esercizi e = esercizi.get(position);
         nomeEsercizio.setText(e.getNomeEsercizio());
         numeroVasche.setText(String.valueOf(e.getNumeroVasche()));
-
-
         return convertView;
     }
 }

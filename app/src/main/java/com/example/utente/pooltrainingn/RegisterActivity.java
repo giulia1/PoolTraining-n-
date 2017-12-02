@@ -1,5 +1,4 @@
 package com.example.utente.pooltrainingn;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -29,11 +28,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mailField;
     private EditText passwordField;
     private EditText ripetiPassword;
-    private nuotoDatabase archivio = new nuotoDatabase();
     private FirebaseAuth firebaseAuth;
-    private String idNuotatore;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private OnCompleteListener mRegistrationListener;
+
 
 
     @Override
@@ -46,9 +43,9 @@ public class RegisterActivity extends AppCompatActivity {
         registrazione = (Button) findViewById(R.id.buttonRegistrazione);
         cognomeField = (EditText) findViewById(R.id.editTextCognome);
         nomeField = (EditText) findViewById(R.id.editTextNome);
-        mailField = (EditText) findViewById(R.id.editTextMail);
+        mailField = (EditText) findViewById(R.id.editTextMail2);
+        ripetiPassword= (EditText) findViewById(R.id.editTextPassword);
         passwordField = (EditText) findViewById(R.id.editTextPassword2);
-        ripetiPassword= (EditText) findViewById(R.id.editTextRipetiPassword);
 
 
         registrazione.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +71,10 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 }
+
+
+
+
             }
 
 
@@ -88,9 +89,6 @@ public class RegisterActivity extends AppCompatActivity {
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     Intent intent = new Intent(RegisterActivity.this, ListaSettimanaActivity.class);
-                    idNuotatore=user.getUid();
-                    intent.putExtra("idNuotatore", idNuotatore);
-                    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
                 }
@@ -123,11 +121,9 @@ public class RegisterActivity extends AppCompatActivity {
                     DatabaseReference myRef = database.getReference("Nuotatori");
                     myRef.child(task.getResult().getUser().getUid()).setValue(n);
                     Log.d("log", "createUserWithEmail:success");
-                    idNuotatore=myRef.child(task.getResult().getUser().getUid()).toString();
                     Toast.makeText(RegisterActivity.this, "Registrazione completata con successo", Toast.LENGTH_SHORT).show();
-                    //Intent login = new Intent(getApplicationContext(), MainActivity.class);
-                    //startActivity(login);
-                    finish();
+                    Intent login = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(login);
 
                 }
                 else {

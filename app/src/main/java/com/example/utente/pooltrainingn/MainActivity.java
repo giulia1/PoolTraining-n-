@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
             };
 
-            password = (EditText) findViewById(R.id.editTextPassword);
+            password = (EditText) findViewById(R.id.editTextPass);
             email = (EditText) findViewById(R.id.editTextMail);
             registrati = (Button) findViewById(R.id.buttonRegistrati);
             accedi = (Button) findViewById(R.id.buttonAccedi);

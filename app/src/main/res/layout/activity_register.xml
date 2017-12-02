@@ -13,12 +13,12 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:background="@drawable/round_corner_trasparent"
         android:orientation="vertical"
         tools:context="com.example.evelina.pooltraining.RegisterActivity"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp">
 
         <EditText
             android:id="@+id/editTextNome"
@@ -82,7 +82,24 @@
             android:layout_marginTop="12dp"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
+            android:textColorHint="@android:color/black"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="296dp" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editTextMail2"
+            android:layout_alignStart="@+id/editTextMail2"
+            android:layout_below="@+id/editTextMail2"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Ripeti Password"
+            android:inputType="textPassword"
             android:textColorHint="@android:color/black"
             android:textColorLink="@color/colorPrimaryDark"
             android:visibility="visible"

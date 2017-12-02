@@ -24,34 +24,23 @@ public class nuotoDatabase {
     private  final static String allenatori="Allenatori";
     private  final static String nuotatori="Nuotatori";
     private  final static String esercizi="Esercizi";
-    private  final  static String vasche="vasche";
+    private  final  static String vasche="numeroVasche";
+    private  final  static String nomeEsercizio="nomeEsercizio";
 
     private ArrayList<Esercizi> listaEsercizi;
-
     ArrayList<String> idEsercizi;
-
     private ValueEventListener listenerEsercizi;
-
     private FirebaseDatabase database=FirebaseDatabase.getInstance();
-    private DatabaseReference mDatabase;
-
 
     public nuotoDatabase() {
 
         listaEsercizi=new ArrayList<>();
-
     }
 
 
     public interface UpdateListenerE {
         void eserciziAggiornati();
     }
-
-
-
-
-
-
     public void leggiEsercizi(  String weekday, String id ,final UpdateListenerE notifica) {
 
     DatabaseReference ref = database.getReference(nuotatori).child(id).child(esercizi).child(weekday);
@@ -66,11 +55,8 @@ public class nuotoDatabase {
                 Esercizi e = new Esercizi();
                 e.setNomeEsercizio(elemento.child("nomeEsercizio").getValue(String.class));
                 e.setNumeroVasche(elemento.child("numeroVasche").getValue(Integer.class));
-                idEsercizi.add(elemento.getKey());
-
+                //idEsercizi.add(elemento.getKey());
                 listaEsercizi.add(e);
-
-
             }
 
             notifica.eserciziAggiornati();
@@ -80,10 +66,7 @@ public class nuotoDatabase {
         @Override
         public void onCancelled(DatabaseError error) {
             Log.w(TAG, "Failed to read value.", error.toException());
-
         }
-
-
     };
         ref.addValueEventListener(listenerEsercizi);
 
@@ -96,14 +79,6 @@ public class nuotoDatabase {
     public List<Esercizi> elencoEsercizi () {
         return listaEsercizi;
     }
-
-
-
-
-
-
-
-
 }
 
 

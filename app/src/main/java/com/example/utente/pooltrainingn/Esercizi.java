@@ -11,7 +11,6 @@ public class Esercizi implements Serializable {
 
     private String nomeEsercizio;
     private int numeroVasche;
-    private String idNuotatore;
 
 
     public Esercizi()
@@ -22,14 +21,6 @@ public class Esercizi implements Serializable {
     {
         this.nomeEsercizio=nomeEsercizio;
         this.numeroVasche=numeroVascheEsercizio;
-
-    }
-
-    public Esercizi (String nomeEsercizio, int numeroVascheEsercizio, String idNuotatore){
-
-        this.nomeEsercizio=nomeEsercizio;
-        this.numeroVasche=numeroVascheEsercizio;
-        this.idNuotatore=idNuotatore;
 
     }
 
@@ -52,13 +43,6 @@ public class Esercizi implements Serializable {
     public void setNumeroVasche(int numeroVascheEsercizio) {
 
         this.numeroVasche = numeroVascheEsercizio;
-    }
-
-    public String getIdNuotatore(){
-        return idNuotatore;
-    }
-    public void setIdNuotatore(String idNuotatore){
-        this.idNuotatore=idNuotatore;
     }
 
 
