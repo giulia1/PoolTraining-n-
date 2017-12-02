@@ -19,8 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ListaEserciziActivity extends AppCompatActivity {
 
     private nuotoDatabase archivio = new nuotoDatabase();
-    private String idNuotatore;
-    private String weekday;
+    private String idNuotatore="9nvoBqyYLbOEOQXdf6sl3QeJfpG3";
+    private String weekday="Lunedì";
     private ListView listaEsercizi;
     private EserciziAdapter adapter;
     private Toolbar logout;
@@ -33,9 +33,6 @@ public class ListaEserciziActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_esercizi);
 
-
-        idNuotatore ="9nvoBqyYLbOEOQXdf6sl3QeJfpG3";
-        weekday="Lunedì";
         //logout = (Toolbar) findViewById(R.id.toolbarLogout);
 
         listaEsercizi = (ListView) findViewById(R.id.listaEsercizi);
