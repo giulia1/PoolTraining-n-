@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blu8"
+    android:background="@drawable/listasettimana"
     tools:context="com.example.utente.pooltrainingn.ListaSettimanaActivity">
 
     <android.support.v7.widget.Toolbar
@@ -28,8 +28,8 @@
         android:layout_height="418dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="-16dp"
-        android:layout_below="@+id/toolbarLogout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/toolbarLogout" />
 </RelativeLayout>

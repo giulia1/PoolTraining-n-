@@ -16,9 +16,9 @@
         android:background="@drawable/round_corner_trasparent"
         android:orientation="vertical"
         tools:context="com.example.evelina.pooltraining.RegisterActivity"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="23dp">
+        android:layout_marginTop="56dp">
 
         <EditText
             android:id="@+id/editTextNome"
