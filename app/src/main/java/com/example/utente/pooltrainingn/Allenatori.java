@@ -5,11 +5,14 @@ package com.example.utente.pooltrainingn;
  */
 
 public class Allenatori {
+
     private String nome;
     private String cognome;
+
     public Allenatori(){}
 
     public Allenatori(String nomeAllenatore,String cognomeAllenatore){
+
         this.nome=nomeAllenatore;
         this.cognome=cognomeAllenatore;
     }
@@ -20,6 +23,7 @@ public class Allenatori {
     public String getCognome(){
         return cognome;
     }
+
     public void setNome(String nomeAllenatore) {
         this.nome = nomeAllenatore;
     }

@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
             mAuth = FirebaseAuth.getInstance();
             mAuthListener = new FirebaseAuth.AuthStateListener() {
                 @Override
@@ -43,10 +43,8 @@ public class MainActivity extends AppCompatActivity {
                         uid=user.getUid();
 
                         Intent settimana=new Intent(getApplicationContext(), ListaSettimanaActivity.class);
-                        //settimana.putExtra("idNuotatore", uid);
                         startActivity(settimana);
                         // User is signed in
-
 
                         Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     } else {
@@ -95,9 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
 
                     //finish();
-                    //se sono un allenatore e faccio il login, vado alla lista nuotatori
                     Intent listaSettimana=new Intent(getApplicationContext(),ListaSettimanaActivity.class);
-                    //listaSettimana.putExtra("idNuotatore",uid);
                     startActivity(listaSettimana);
 
                 }

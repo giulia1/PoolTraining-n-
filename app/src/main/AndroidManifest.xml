@@ -18,7 +18,10 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ListaSettimanaActivity" />
-        <activity android:name=".ListaEserciziActivity"></activity>
+        <activity android:name=".ListaEserciziActivity"
+            android:label="I miei esercizi">
+
+        </activity>
     </application>
 
 </manifest>

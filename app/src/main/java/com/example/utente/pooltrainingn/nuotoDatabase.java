@@ -1,10 +1,6 @@
 package com.example.utente.pooltrainingn;
 
 import android.util.Log;
-
-import com.example.utente.pooltrainingn.Allenatori;
-import com.example.utente.pooltrainingn.Esercizi;
-import com.example.utente.pooltrainingn.Nuotatori;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -12,7 +8,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.*;
-
 import static android.content.ContentValues.TAG;
 
 /**
@@ -21,14 +16,13 @@ import static android.content.ContentValues.TAG;
 
 public class nuotoDatabase {
 
-    private  final static String allenatori="Allenatori";
+
     private  final static String nuotatori="Nuotatori";
     private  final static String esercizi="Esercizi";
     private  final  static String vasche="numeroVasche";
     private  final  static String nomeEsercizio="nomeEsercizio";
 
     private ArrayList<Esercizi> listaEsercizi;
-    ArrayList<String> idEsercizi;
     private ValueEventListener listenerEsercizi;
     private FirebaseDatabase database=FirebaseDatabase.getInstance();
 
@@ -41,6 +35,7 @@ public class nuotoDatabase {
     public interface UpdateListenerE {
         void eserciziAggiornati();
     }
+
     public void leggiEsercizi(  String weekday, String id ,final UpdateListenerE notifica) {
 
     DatabaseReference ref = database.getReference(nuotatori).child(id).child(esercizi).child(weekday);
@@ -53,9 +48,8 @@ public class nuotoDatabase {
             for (DataSnapshot elemento : dataSnapshot.getChildren()) {
 
                 Esercizi e = new Esercizi();
-                e.setNomeEsercizio(elemento.child("nomeEsercizio").getValue(String.class));
-                e.setNumeroVasche(elemento.child("numeroVasche").getValue(Integer.class));
-                //idEsercizi.add(elemento.getKey());
+                e.setNomeEsercizio(elemento.child(nomeEsercizio).getValue(String.class));
+                e.setNumeroVasche(elemento.child(vasche).getValue(Integer.class));
                 listaEsercizi.add(e);
             }
 

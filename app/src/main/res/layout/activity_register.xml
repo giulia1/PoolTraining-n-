@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blu8"
+    android:background="@drawable/register1"
     tools:context="com.example.utente.pooltrainingn.RegisterActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,11 +30,9 @@
             android:layout_marginLeft="11dp"
             android:layout_marginStart="11dp"
             android:layout_marginTop="54dp"
-            android:backgroundTint="@color/colorPrimary"
             android:ems="10"
             android:hint="Nome"
             android:inputType="textPersonName"
-            android:textColor="@color/colorPrimary"
             android:textColorHint="@android:color/black"
             android:textColorLink="@color/colorPrimaryDark"
             tools:layout_editor_absoluteX="63dp"

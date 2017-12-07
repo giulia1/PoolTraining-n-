@@ -31,6 +31,9 @@
         android:layout_alignParentTop="true"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:textColorHint="@color/white"
+        android:theme="?attr/actionBarTheme"
+        app:titleTextColor="@color/white"
+        app:popupTheme="@android:color/background_light" />
 
 </RelativeLayout>

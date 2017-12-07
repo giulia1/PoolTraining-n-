@@ -31,15 +31,15 @@
         android:textColor="@android:color/black" />
 
     <TextView
-        android:id="@+id/textViewVasche1"
+        android:id="@+id/textViewparolaVAsche"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Vasche"
-        android:textColor="@android:color/black"
         android:layout_alignBaseline="@+id/textViewNVascheAggiunte"
         android:layout_alignBottom="@+id/textViewNVascheAggiunte"
+        android:layout_toEndOf="@+id/textViewNVascheAggiunte"
         android:layout_toRightOf="@+id/textViewNVascheAggiunte"
-        android:layout_toEndOf="@+id/textViewNVascheAggiunte" />
+        android:layout_weight="1"
+        android:text="Vasche"
+        android:textColor="@android:color/black" />
 
 </RelativeLayout>

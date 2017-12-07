@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 
 public class Nuotatori implements Serializable {
+
     private String nome;
     private String cognome;
     private String idAllenatore;
@@ -15,6 +16,7 @@ public class Nuotatori implements Serializable {
     public Nuotatori(){}
 
     public Nuotatori(String nome,String cognome, String idAllenatore, String email){
+
         this.nome=nome;
         this.cognome=cognome;
         this.idAllenatore=idAllenatore;

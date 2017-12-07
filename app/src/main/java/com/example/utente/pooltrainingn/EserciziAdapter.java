@@ -20,6 +20,7 @@ public class EserciziAdapter extends BaseAdapter {
 
     private List<Esercizi> esercizi= Collections.emptyList();
     private Context context;
+    private int n;
 
     public EserciziAdapter(Context context) {
         this.context=context;
@@ -48,15 +49,24 @@ public class EserciziAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         if (convertView == null)
             convertView = LayoutInflater.from(context).inflate(R.layout.riga_esercizio, parent, false);
 
         TextView nomeEsercizio= (TextView)convertView.findViewById(R.id.textViewNomeEsercizio);
         TextView  numeroVasche= (TextView)convertView.findViewById(R.id.textViewNVascheAggiunte);
+        TextView parolaVasche=(TextView) convertView.findViewById(R.id.textViewparolaVAsche);
 
         Esercizi e = esercizi.get(position);
         nomeEsercizio.setText(e.getNomeEsercizio());
-        numeroVasche.setText(String.valueOf(e.getNumeroVasche()));
+        n=e.getNumeroVasche();
+        numeroVasche.setText(String.valueOf(n));
+        if(n==1){
+            parolaVasche.setText("vasca");
+        }
+        else{
+            parolaVasche.setText("vasche");
+        }
         return convertView;
     }
 }
