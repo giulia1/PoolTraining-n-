@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     private void Login() {
+
         String email2 = email.getText().toString().trim();
         String password2 = password.getText().toString().trim();
         mAuth.signInWithEmailAndPassword(email2, password2).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

@@ -106,14 +106,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task)
             {
                 if(task.isSuccessful()) {
+
                     Nuotatori n = new Nuotatori(nomeField.getText().toString(), cognomeField.getText().toString(), "null", mail);
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("Nuotatori");
                     myRef.child(task.getResult().getUser().getUid()).setValue(n);
                     Log.d("log", "createUserWithEmail:success");
                     Toast.makeText(RegisterActivity.this, "Registrazione completata con successo", Toast.LENGTH_SHORT).show();
-                    Intent login = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(login);
 
                 }
                 else {

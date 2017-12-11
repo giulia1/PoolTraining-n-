@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ListaSettimanaActivity extends AppCompatActivity {
 
     private ListView list;
-    private String[] nome = {"Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"};
+    private String[] settimana = {"Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"};
     private String giorno;
     private String idNuotatore;
     private FirebaseAuth mAuth;
@@ -27,7 +27,7 @@ public class ListaSettimanaActivity extends AppCompatActivity {
         list = (ListView) findViewById(R.id.listaSettimana);
         idNuotatore = mAuth.getCurrentUser().getUid();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nome);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, settimana);
         list.setAdapter(adapter);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -46,5 +46,3 @@ public class ListaSettimanaActivity extends AppCompatActivity {
 
     }
 }
-
-

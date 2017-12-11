@@ -32,8 +32,8 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:textColorHint="@color/white"
-        android:theme="?attr/actionBarTheme"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
         app:titleTextColor="@color/white"
-        app:popupTheme="@android:color/background_light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 </RelativeLayout>
